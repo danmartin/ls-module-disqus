@@ -5,7 +5,7 @@
 	class Disqus_Module extends Core_ModuleBase {
 		const PATH = PATH_MOD_DISQUS;
 		
-		protected function get_info() {
+		protected function create_module_info() {
 			return new Core_ModuleInfo(
 				"Disqus",
 				"Provides Disqus comment synchronization for your store.",
@@ -15,15 +15,13 @@
 		
 		public function build_ui_permissions($host) {
 			$host->add_field($this, 'manage_backups', 'Manage backups', 'left')->renderAs(frm_checkbox)->comment('View and manage backups.', 'above');
-			$host->add_field($this, 'manage_settings', 'Manage settings', 'left')->renderAs(frm_checkbox)->comment('View and manage the settings.', 'above');
 		}
 		
 		public function list_tabs($tab_collection) {
 			$user = Phpr::$security->getUser();
 			
 			$tabs = array(
-				'backups' => array('backups', 'Backups', 'manage_backups')//,
-				//'settings' => array('settings', 'Settings', 'manage_settings')
+				'backups' => array('backups', 'Backups', 'manage_backups')
 			);
 
 			$first_tab = null;
@@ -48,7 +46,7 @@
 		 */
 		
 		protected function createModuleInfo() {
-			return $this->get_info();
+			return $this->create_module_info();
 		}
 		
 		public function buildPermissionsUi($host) {
