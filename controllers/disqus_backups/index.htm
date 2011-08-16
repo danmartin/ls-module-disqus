@@ -1,0 +1,20 @@
+<? Phpr_View::beginBlock("head") ?>
+	<link rel="stylesheet" href="phproad/modules/db/behaviors/db_formbehavior/resources/css/forms.css" type="text/css" />
+<? Phpr_View::endBlock() ?>
+
+<? Phpr_View::beginBlock("view") ?>
+	<?= flash() ?>
+
+	<div class="toolbar">
+		<?= Phpr_Form::open_tag() ?>
+			<? if(Core_ModuleManager::findById('blog')): ?>
+				<?= backend_ctr_ajax_button('Export Blog Comments', 'new_text_document', 'index_onExportBlogComments', array(), 'loadIndicator: {hideOnSuccess: true}') ?>
+			<? endif ?>
+			<? if(Core_ModuleManager::findById('wiki')): ?>
+				<div class="separator">&nbsp;</div>
+				<?= backend_ctr_ajax_button('Export Wiki Comments', 'new_text_document', 'index_onExportWikiComments', array(), 'loadIndicator: {hideOnSuccess: true}') ?>
+			<? endif ?>
+		<?= Phpr_Form::close_tag() ?>
+		<div class="clear"></div>
+	</div>
+<? Phpr_View::endBlock() ?>
