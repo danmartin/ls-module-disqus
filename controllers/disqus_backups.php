@@ -102,8 +102,8 @@
         <wp:comment>
           <wp:comment_id><?= $comment->id ?></wp:comment_id>
           <wp:comment_author><![CDATA[<?= $comment->author_name ?>]] > </wp:comment_author>
-          <wp:comment_author_email><?= $author_email ?></wp:comment_author_email>
-          <wp:comment_author_url><?= $author_url ?></wp:comment_author_url>
+          <wp:comment_author_email><?= $comment->author_email ?></wp:comment_author_email>
+          <wp:comment_author_url><?= $comment->author_url ?></wp:comment_author_url>
           <wp:comment_author_IP><?= $comment->author_ip ?></wp:comment_author_IP>
           <wp:comment_date><?= date('Y-m-d H:i:s', strtotime($comment->created_at)) ?></wp:comment_date>
           <wp:comment_date_gmt><?= date('Y-m-d H:i:s', strtotime($comment->created_at)) ?></wp:comment_date_gmt>
@@ -190,8 +190,8 @@
         <wp:comment>
           <wp:comment_id><?= $comment->id ?></wp:comment_id>
           <wp:comment_author><![CDATA[<?= $comment->author_name ?>]] > </wp:comment_author>
-          <wp:comment_author_email><?= $author_email ?></wp:comment_author_email>
-          <wp:comment_author_url><?= $author_url ?></wp:comment_author_url>
+          <wp:comment_author_email><?= $comment->author_email ?></wp:comment_author_email>
+          <wp:comment_author_url><?= $comment->author_url ?></wp:comment_author_url>
           <wp:comment_author_IP><?= $comment->author_ip ?></wp:comment_author_IP>
           <wp:comment_date><?= date('Y-m-d H:i:s', strtotime($comment->created_at)) ?></wp:comment_date>
           <wp:comment_date_gmt><?= date('Y-m-d H:i:s', strtotime($comment->created_at)) ?></wp:comment_date_gmt>
