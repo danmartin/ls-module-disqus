@@ -14,7 +14,7 @@ Create the user/forum objects and pass them to the thread object. Then call the 
 ```php
 $user = new Disqus_User('9VqCQcUlmxSgGdGUDNtUIYaLddRFFwiqCDNjgW49mPvVXpZpO8GypTN5fU8mTTm6');
 $forum = new Disqus_Forum('F3KZp68bf3XJs2wUzX4VyaKcV7lXldcpr6q5KPFvCDNKZibOU1QekpFlzILCqo3E');
-$thread = new Disqus_Thread($user, $forum, 'post_' . $post->id);
+$thread = new Disqus_Thread($user, $forum, 'blog_post_' . $post->id);
 
 echo $thread->sync_blog_comment($comment)->approved_comment_num;
 ```
